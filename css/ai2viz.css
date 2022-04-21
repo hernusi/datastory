@@ -1,0 +1,80 @@
+#g-visualization-box ,
+#g-visualization-box .g-artboard {
+    margin:0 auto;
+}
+#g-visualization-box p {
+    margin:0;
+}
+#g-visualization-box .g-aiAbs {
+    position:absolute;
+}
+#g-visualization-box .g-aiImg {
+    position:absolute;
+    top:0;
+    display:block;
+    width:100% !important;
+}
+#g-visualization-box .g-aiSymbol {
+    position: absolute;
+    box-sizing: border-box;
+}
+#g-visualization-box .g-aiPointText p { white-space: nowrap; }
+#g-visualization-Artboard_1 {
+    position:relative;
+    overflow:hidden;
+}
+#g-visualization-Artboard_1 p {
+    font-family:arial,helvetica,sans-serif;
+    line-height:15px;
+    height:auto;
+    opacity:1;
+    letter-spacing:0em;
+    font-size:13px;
+    text-align:left;
+    color:rgb(0,0,0);
+    text-transform:none;
+    padding-bottom:0;
+    padding-top:0;
+    mix-blend-mode:normal;
+    font-style:normal;
+    position:static;
+}
+#g-visualization-Artboard_1 .g-pstyle0 {
+    font-weight:bold;
+    line-height:17px;
+    height:17px;
+    font-size:14px;
+}
+#g-visualization-Artboard_1 .g-pstyle1 {
+    height:15px;
+}
+#g-visualization-Artboard_1 .g-pstyle2 {
+    line-height:14px;
+    height:14px;
+    font-size:12px;
+}
+#g-visualization-Artboard_1 .g-pstyle3 {
+    font-weight:500;
+    line-height:18px;
+    height:18px;
+    font-size:15px;
+}
+#g-visualization-Artboard_1 .g-cstyle0 {
+    color:rgb(27,158,119);
+}
+
+#para-intro {
+
+font-family: 'Poppins', sans-serif;
+font-size: 1rem;
+padding: 1.5rem;
+margin-left: 10rem;
+margin-right: 10rem;
+justify-content: center;
+}
+
+#g-visualization-Artboard_1-interactions-img rect, #g-visualization-Artboard_1-interactions-img circle, #g-visualization-Artboard_1-interactions-img path, #g-visualization-Artboard_1-interactions-img line, #g-visualization-Artboard_1-interactions-img polyline, #g-visualization-Artboard_1-interactions-img polygon { vector-effect: non-scaling-stroke; }
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap" rel="stylesheet">
