@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+	/* Style from working original scrollama template */		
+      h1 {
+
+        font-family: 'Poppins', sans-serif;
+
+      }
+
+      h3 {
+
+        font-family: 'Poppins', sans-serif;
+
+      }
+
+      #scrolly {
+        position: relative;
+        padding: 1rem;
+      }
+
+      .scrolly-overlay {
+        position: relative;
+        padding: 0;
+        max-width: 35rem;
+        margin: 0 auto;
+      }
+
+      .sticky-thing {
+        position: -webkit-sticky;
+        position: sticky;
+        left: 0;
+        width: 100%;
+        margin: 0;
+        z-index: 0;
+        top: 0;
+        height: 100vh;
+        /* Center everything inside */
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .step {
+        margin: 0 auto 2rem auto;
+        margin-bottom: 25rem;
+        background-color: #bee8f0;
+        opacity: 0.9;
+        color: black;
+        font-family: 'Poppins', sans-serif;
+      }
+
+      .step p {
+        text-align: left;
+        padding: 1rem;
+        font-size: 1rem;
+      }
+
+      .hidden { visibility: hidden; }
+
+      /* When it's less than 700 pixels wide, do normal scrollytelling */
+      @media only screen and (min-width: 700px) {
+        #scrolly.side-by-side {
+          display: flex;
+        }
+
+        #scrolly.side-by-side > div {
+          flex-basis: 0;
+          flex-grow: 1;
+          flex-shrink: 1;
+          padding: 0.75em;
+        }
+
+        #scrolly.side-by-side .scrolly-overlay {
+          margin-top: 70vh;
+          order: 0;
+          /* Change these to adjust sizing options */
+          min-width: 15rem;
+          max-width: 20rem;
+        }
+
+        #scrolly.side-by-side .sticky-thing {
+          order: 1;
+          flex-grow: 2;
+        }
+      }
+	  /* CSS Working original scrollama template ENDS ABOVE */	
+
+	  /* PARALLAX CSS BEGINS BELOW*/	
+	  @import ('https://fonts.googleapis.com/css?=Poppins:300,400,500,600,700,800,900&display=swap');
+*
+
+		{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: 'Poppins', sans-serif;
+
+		}
+
+		body {
+			min-height: 100vh;
+			background: linear-gradient(#fbf7c0, #c6e3c3)
+		}
+
+		header {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			padding: 30px 100px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			z-index: 10000;
+		}
+
+		header .logo {
+			background: #62795f;
+			color: #fbf7c0;
+			padding: 5px 10px;
+			font-weight: 600;
+			text-decoration: none;
+			font-size: 1.3em;
+			text-transform: uppercase;
+			letter-spacing: -1.0px;
+		}
+
+		header ul {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		header ul li {
+			list-style: none;
+			margin-left: 20 px;
+		}
+
+		header ul li a {
+			text-decoration: none;
+			padding: 5px 15px;
+			color: #62795f;
+			border-radius: 20px;
+		}
+
+		header ul li a:hover, 
+		header ul li .active {
+			background: #62795f;
+			color: #fbf7c0;
+		}
+
+		#headsection {
+			position: relative;
+			width: 100%;
+			height: 100vh;
+			padding: 100px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.introtostory {
+			position: relative;
+   			height: 100%;
+    		padding: 100px;
+		}
+
+		.introtostory h2 {
+			font-size: 3em;
+			margin-bottom: 10px;
+			color:#0f6674
+		}
+
+		section img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			pointer-events: none;
+		}
+
+		section img#clouds {
+			mix-blend-mode: screen;
+		}
+
+
+		section img#lands {
+			z-index: 10;
+		}
+
+		#text {
+			position: absolute;
+			color: #0f6674;
+			white-space: nowrap;
+			font-size: 3vw;
+			z-index: 9;
+			transform: translateY(-190px); 
+		}
+
+		#btn {
+			text-decoration: none;
+			display: inline-block;
+			padding: 8px 30px;
+			border-radius: 40px;
+			background: #0f6674;
+			color: #fff;
+			font-size: 1em;
+			z-index: 1;
+			transform: translateY(200px);
+		}
+
+		.sec {
+
+			position: relative;
+			height: 100%;
+			padding: 100px;
+			background: linear-gradient(to bottom, #f5f5c0, transparent );
+
+
+		}
+
+
+
+		.sec h2 {
+			font-size: 3.5em;
+			margin-bottom: 10px;
+			color:#0f6674
+		}
+
+		.sec p {
+			font-size: 1.1em;
+			margin-bottom: 10px;
+			color: #27555c;
+		}
+
+		#
+
+	  /* PARALLAX CSS ENDS ABOVE*/	
+    </style>
+	<script src="https://unpkg.com/intersection-observer@0.12.0/intersection-observer.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/scrollama/3.1.1/scrollama.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.3.0/d3.min.js"></script>
+	
+  </head>
+
+  <body>
+
+	<header>
+        <a href="#" class="logo">UNECE Data Story</a>
+        <ul>
+            <li><a href="#" class='active'>Home</a></li>
+            <li><a href="#">Guidance</a></li>
+            <li><a href="#">Task Force</a></li>
+            <li><a href="#">Technical notes</a></li>
+        </ul>
+    
+    </header>
+
+	<section id="headsection">
+        <img src="images/background.png" id="background">
+        <img src="images/lands.png" id="lands">
+        <img src="images/clouds.png" id="clouds">
+        <h2 id="text">Measuring Subjective Poverty</h2>
+        <a href="#intro" id="btn">Read data story</a>
+    </section>
+
+
+	<section class="introtostory">
+		<h2>What is subjective poverty?</h2>
+	
+		<div>  
+    		<p>Country experience in subjective poverty lines is very limited and still not well established. 
+				In the Philippines, a private market research organization asks heads of households about their income: whether they consider themselves poor, and if so, how 
+				much more income would they need not to consider themselves as poor. This "self-assessed poverty" approach yields what are sometimes referred to as subjective poverty estimates.
+				Like many opinion poll-type investigations, these surveys are small. They typically involve 1200 - 1500 sample households, enabling the results to be released very quickly.
+				Egypt's national statistical system has constructed a subjective poverty line based also on minimum income that household heads believe is necessary for an adequate standard of living. 
+				The experience of Egypt showed, however, that this methodology overestimates poverty, especially in urban areas where expectations of educated household heads tend to exceed current income levels by a large margin (UNSDESCWA, op. cit).
+			</p> 
+   		</div>
+	</section>
+
+	<section id="scrolly">
+        <div class="sticky-thing">
+          <div class="ai2html-container">
+
+<!-- ai2html goes below this line -->
+<!-- Generated by ai2html v0.109.0 - 2022-04-06 22:12 -->
+<!-- ai file: visualization.ai -->
+<style media="screen,print">
+	#g-visualization-box ,
+	#g-visualization-box .g-artboard {
+		margin:0 auto;
+	}
+	#g-visualization-box p {
+		margin:0;
+	}
+	#g-visualization-box .g-aiAbs {
+		position:absolute;
+	}
+	#g-visualization-box .g-aiImg {
+		position:absolute;
+		top:0;
+		display:block;
+		width:100% !important;
+	}
+	#g-visualization-box .g-aiSymbol {
+		position: absolute;
+		box-sizing: border-box;
+	}
+	#g-visualization-box .g-aiPointText p { white-space: nowrap; }
+	#g-visualization-Artboard_1 {
+		position:relative;
+		overflow:hidden;
+	}
+	#g-visualization-Artboard_1 p {
+		font-family:arial,helvetica,sans-serif;
+		line-height:15px;
+		height:auto;
+		opacity:1;
+		letter-spacing:0em;
+		font-size:13px;
+		text-align:left;
+		color:rgb(0,0,0);
+		text-transform:none;
+		padding-bottom:0;
+		padding-top:0;
+		mix-blend-mode:normal;
+		font-style:normal;
+		position:static;
+	}
+	#g-visualization-Artboard_1 .g-pstyle0 {
+		font-weight:bold;
+		line-height:17px;
+		height:17px;
+		font-size:14px;
+	}
+	#g-visualization-Artboard_1 .g-pstyle1 {
+		height:15px;
+	}
+	#g-visualization-Artboard_1 .g-pstyle2 {
+		line-height:14px;
+		height:14px;
+		font-size:12px;
+	}
+	#g-visualization-Artboard_1 .g-pstyle3 {
+		font-weight:500;
+		line-height:18px;
+		height:18px;
+		font-size:15px;
+	}
+	#g-visualization-Artboard_1 .g-cstyle0 {
+		color:rgb(27,158,119);
+	}
+
+  #para-intro {
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    padding: 1.5rem;
+    margin-left: 10rem;
+    margin-right: 10rem;
+    justify-content: center;
+  }
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap" rel="stylesheet">
+
+</style>
+
+<h3 align="center">Time spent focused on following UNECE survey recommendation and resulting output</h3>
+<div id="g-visualization-box" class="ai2html">
+
+	<!-- Artboard: Artboard_1 -->
+	<div id="g-visualization-Artboard_1" class="g-artboard" style="max-width: 556px;max-height: 492px" data-aspect-ratio="1.131" data-min-width="0">
+<div style="padding: 0 0 88.4228% 0;"></div>
+		<img id="g-visualization-Artboard_1-img" class="g-visualization-Artboard_1-img g-aiImg" alt="" src="visualization-Artboard_1.png"/>
+<!-- Generator: Adobe Illustrator 26.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg class="g-visualization-Artboard_1-interactions-img g-aiImg" version="1.2" baseProfile="tiny" id="g-visualization-Artboard_1-interactions-img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	 x="0px" y="0px" viewBox="0 0 556.038 491.631" overflow="visible" xml:space="preserve">
+<g>
+	<g id="champs" data-name="champs">
+		<path fill="#7570B3" d="M446.798,133.56c0,1.906-1.545,3.451-3.451,3.451c-1.906,0-3.451-1.545-3.451-3.451
+			c0-1.906,1.545-3.451,3.451-3.451C445.253,130.109,446.798,131.654,446.798,133.56"/>
+		<path fill="#7570B3" d="M466.183,138.96c0,1.906-1.545,3.451-3.451,3.451s-3.451-1.545-3.451-3.451
+			c0-1.906,1.545-3.451,3.451-3.451S466.183,137.054,466.183,138.96"/>
+		<path fill="#7570B3" d="M446.798,95.758c0,1.906-1.545,3.451-3.451,3.451c-1.906,0-3.451-1.545-3.451-3.451
+			s1.545-3.451,3.451-3.451C445.253,92.307,446.798,93.852,446.798,95.758"/>
+		<path fill="#7570B3" d="M524.34,122.759c0,1.906-1.545,3.451-3.451,3.451s-3.451-1.545-3.451-3.451s1.545-3.451,3.451-3.451
+			S524.34,120.853,524.34,122.759"/>
+		<path fill="#7570B3" d="M504.954,176.762c0,1.906-1.545,3.451-3.451,3.451s-3.451-1.545-3.451-3.451
+			c0-1.906,1.545-3.451,3.451-3.451S504.954,174.856,504.954,176.762"/>
+		<path fill="#7570B3" d="M466.183,90.358c0,1.906-1.545,3.451-3.451,3.451s-3.451-1.545-3.451-3.451s1.545-3.451,3.451-3.451
+			S466.183,88.452,466.183,90.358"/>
+		<path fill="#7570B3" d="M485.569,79.557c0,1.906-1.545,3.451-3.451,3.451s-3.451-1.545-3.451-3.451s1.545-3.451,3.451-3.451
+			S485.569,77.651,485.569,79.557"/>
+		<path fill="#7570B3" d="M485.569,144.36c0,1.906-1.545,3.451-3.451,3.451s-3.451-1.545-3.451-3.451s1.545-3.451,3.451-3.451
+			S485.569,142.454,485.569,144.36"/>
+		<path fill="#7570B3" d="M427.412,90.358c0,1.906-1.545,3.451-3.451,3.451c-1.906,0-3.451-1.545-3.451-3.451
+			s1.545-3.451,3.451-3.451C425.867,86.907,427.412,88.452,427.412,90.358"/>
+		<path fill="#7570B3" d="M446.798,144.36c0,1.906-1.545,3.451-3.451,3.451c-1.906,0-3.451-1.545-3.451-3.451
+			s1.545-3.451,3.451-3.451C445.253,140.909,446.798,142.454,446.798,144.36"/>
+		<path fill="#7570B3" d="M427.412,106.558c0,1.906-1.545,3.451-3.451,3.451c-1.906,0-3.451-1.545-3.451-3.451
+			s1.545-3.451,3.451-3.451C425.867,103.108,427.412,104.653,427.412,106.558"/>
+		<path fill="#7570B3" d="M466.183,149.761c0,1.906-1.545,3.451-3.451,3.451s-3.451-1.545-3.451-3.451s1.545-3.451,3.451-3.451
+			S466.183,147.855,466.183,149.761"/>
+		<path fill="#7570B3" d="M485.569,122.759c0,1.906-1.545,3.451-3.451,3.451s-3.451-1.545-3.451-3.451s1.545-3.451,3.451-3.451
+			S485.569,120.853,485.569,122.759"/>
+		<path fill="#7570B3" d="M504.954,149.761c0,1.906-1.545,3.451-3.451,3.451s-3.451-1.545-3.451-3.451s1.545-3.451,3.451-3.451
+			S504.954,147.855,504.954,149.761"/>
+		<path fill="#7570B3" d="M504.954,149.761c0,1.906-1.545,3.451-3.451,3.451s-3.451-1.545-3.451-3.451s1.545-3.451,3.451-3.451
+			S504.954,147.855,504.954,149.761"/>
+		<path fill="#7570B3" d="M485.569,133.56c0,1.906-1.545,3.451-3.451,3.451s-3.451-1.545-3.451-3.451
+			c0-1.906,1.545-3.451,3.451-3.451S485.569,131.654,485.569,133.56"/>
+		<path fill="#7570B3" d="M524.34,144.36c0,1.906-1.545,3.451-3.451,3.451s-3.451-1.545-3.451-3.451s1.545-3.451,3.451-3.451
+			S524.34,142.454,524.34,144.36"/>
+		<path fill="#7570B3" d="M427.412,171.362c0,1.906-1.545,3.451-3.451,3.451c-1.906,0-3.451-1.545-3.451-3.451
+			c0-1.906,1.545-3.451,3.451-3.451C425.867,167.911,427.412,169.456,427.412,171.362"/>
+		<path fill="#7570B3" d="M485.569,160.561c0,1.906-1.545,3.451-3.451,3.451s-3.451-1.545-3.451-3.451
+			c0-1.906,1.545-3.451,3.451-3.451S485.569,158.655,485.569,160.561"/>
+	</g>
+	
+		<rect id="a-3" data-name="a-3" x="37.515" y="344.44" fill="#DCFFF0" width="124.779" height="54.183"/>
+	<path style="opacity:0.69;" fill="none" stroke="#1B9E77" stroke-width="2.5201" stroke-miterlimit="10" d="
+		M59.087,392.772c0,1.906-1.545,3.451-3.451,3.451c-1.906,0-3.451-1.545-3.451-3.451c0-1.906,1.545-3.451,3.451-3.451
+		C57.542,389.321,59.087,390.866,59.087,392.772"/>
+	<path style="opacity:0.69;" fill="none" stroke="#1B9E77" stroke-width="2.5201" stroke-miterlimit="10" d="
+		M117.244,371.171c0,1.906-1.545,3.451-3.451,3.451c-1.906,0-3.451-1.545-3.451-3.451s1.545-3.451,3.451-3.451
+		C115.699,367.72,117.244,369.265,117.244,371.171"/>
+	<path style="opacity:0.69;" fill="none" stroke="#1B9E77" stroke-width="2.5201" stroke-miterlimit="10" d="
+		M59.087,371.171c0,1.906-1.545,3.451-3.451,3.451c-1.906,0-3.451-1.545-3.451-3.451s1.545-3.451,3.451-3.451
+		C57.542,367.72,59.087,369.265,59.087,371.171"/>
+	<path style="opacity:0.69;" fill="none" stroke="#1B9E77" stroke-width="2.5201" stroke-miterlimit="10" d="
+		M78.473,376.571c0,1.906-1.545,3.451-3.451,3.451c-1.906,0-3.451-1.545-3.451-3.451c0-1.906,1.545-3.451,3.451-3.451
+		C76.928,373.12,78.473,374.665,78.473,376.571"/>
+	<path style="opacity:0.69;" fill="none" stroke="#1B9E77" stroke-width="2.5201" stroke-miterlimit="10" d="
+		M78.473,371.171c0,1.906-1.545,3.451-3.451,3.451c-1.906,0-3.451-1.545-3.451-3.451s1.545-3.451,3.451-3.451
+		C76.928,367.72,78.473,369.265,78.473,371.171"/>
+	<path style="opacity:0.69;" fill="none" stroke="#1B9E77" stroke-width="2.5201" stroke-miterlimit="10" d="
+		M78.473,387.372c0,1.906-1.545,3.451-3.451,3.451c-1.906,0-3.451-1.545-3.451-3.451c0-1.906,1.545-3.451,3.451-3.451
+		C76.928,383.921,78.473,385.466,78.473,387.372"/>
+	<path style="opacity:0.69;" fill="none" stroke="#1B9E77" stroke-width="2.5201" stroke-miterlimit="10" d="
+		M78.473,381.971c0,1.906-1.545,3.451-3.451,3.451c-1.906,0-3.451-1.545-3.451-3.451c0-1.906,1.545-3.451,3.451-3.451
+		C76.928,378.521,78.473,380.066,78.473,381.971"/>
+	<path style="opacity:0.69;" fill="none" stroke="#1B9E77" stroke-width="2.5201" stroke-miterlimit="10" d="
+		M59.087,376.571c0,1.906-1.545,3.451-3.451,3.451c-1.906,0-3.451-1.545-3.451-3.451c0-1.906,1.545-3.451,3.451-3.451
+		C57.542,373.12,59.087,374.665,59.087,376.571"/>
+	<path style="opacity:0.69;" fill="none" stroke="#1B9E77" stroke-width="2.5201" stroke-miterlimit="10" d="
+		M78.473,381.971c0,1.906-1.545,3.451-3.451,3.451c-1.906,0-3.451-1.545-3.451-3.451c0-1.906,1.545-3.451,3.451-3.451
+		C76.928,378.521,78.473,380.066,78.473,381.971"/>
+	<path style="opacity:0.69;" fill="none" stroke="#1B9E77" stroke-width="2.5201" stroke-miterlimit="10" d="
+		M78.473,371.171c0,1.906-1.545,3.451-3.451,3.451c-1.906,0-3.451-1.545-3.451-3.451s1.545-3.451,3.451-3.451
+		C76.928,367.72,78.473,369.265,78.473,371.171"/>
+	<path style="opacity:0.69;" fill="none" stroke="#1B9E77" stroke-width="2.5201" stroke-miterlimit="10" d="
+		M97.858,381.971c0,1.906-1.545,3.451-3.451,3.451c-1.906,0-3.451-1.545-3.451-3.451c0-1.906,1.545-3.451,3.451-3.451
+		C96.313,378.521,97.858,380.066,97.858,381.971"/>
+	<path style="opacity:0.69;" fill="none" stroke="#1B9E77" stroke-width="2.5201" stroke-miterlimit="10" d="
+		M97.858,381.971c0,1.906-1.545,3.451-3.451,3.451c-1.906,0-3.451-1.545-3.451-3.451c0-1.906,1.545-3.451,3.451-3.451
+		C96.313,378.521,97.858,380.066,97.858,381.971"/>
+	<path style="opacity:0.69;" fill="none" stroke="#1B9E77" stroke-width="2.5201" stroke-miterlimit="10" d="
+		M78.473,381.971c0,1.906-1.545,3.451-3.451,3.451c-1.906,0-3.451-1.545-3.451-3.451c0-1.906,1.545-3.451,3.451-3.451
+		C76.928,378.521,78.473,380.066,78.473,381.971"/>
+	<path style="opacity:0.69;" fill="none" stroke="#1B9E77" stroke-width="2.5201" stroke-miterlimit="10" d="
+		M156.015,365.771c0,1.906-1.545,3.451-3.451,3.451c-1.906,0-3.451-1.545-3.451-3.451c0-1.906,1.545-3.451,3.451-3.451
+		C154.47,362.32,156.015,363.865,156.015,365.771"/>
+	<path style="opacity:0.69;" fill="none" stroke="#1B9E77" stroke-width="2.5201" stroke-miterlimit="10" d="
+		M117.244,349.57c0,1.906-1.545,3.451-3.451,3.451c-1.906,0-3.451-1.545-3.451-3.451s1.545-3.451,3.451-3.451
+		C115.699,346.119,117.244,347.664,117.244,349.57"/>
+	<path style="opacity:0.69;" fill="none" stroke="#1B9E77" stroke-width="2.5201" stroke-miterlimit="10" d="
+		M97.858,376.571c0,1.906-1.545,3.451-3.451,3.451c-1.906,0-3.451-1.545-3.451-3.451c0-1.906,1.545-3.451,3.451-3.451
+		C96.313,373.12,97.858,374.665,97.858,376.571"/>
+	<path style="opacity:0.69;" fill="none" stroke="#1B9E77" stroke-width="2.5201" stroke-miterlimit="10" d="
+		M78.473,365.771c0,1.906-1.545,3.451-3.451,3.451c-1.906,0-3.451-1.545-3.451-3.451c0-1.906,1.545-3.451,3.451-3.451
+		C76.928,362.32,78.473,363.865,78.473,365.771"/>
+	<path style="opacity:0.69;" fill="none" stroke="#1B9E77" stroke-width="2.5201" stroke-miterlimit="10" d="
+		M78.473,376.571c0,1.906-1.545,3.451-3.451,3.451c-1.906,0-3.451-1.545-3.451-3.451c0-1.906,1.545-3.451,3.451-3.451
+		C76.928,373.12,78.473,374.665,78.473,376.571"/>
+	<path style="opacity:0.69;" fill="none" stroke="#1B9E77" stroke-width="2.5201" stroke-miterlimit="10" d="
+		M78.473,371.171c0,1.906-1.545,3.451-3.451,3.451c-1.906,0-3.451-1.545-3.451-3.451s1.545-3.451,3.451-3.451
+		C76.928,367.72,78.473,369.265,78.473,371.171"/>
+	<path style="opacity:0.69;" fill="none" stroke="#1B9E77" stroke-width="2.5201" stroke-miterlimit="10" d="
+		M78.473,376.571c0,1.906-1.545,3.451-3.451,3.451c-1.906,0-3.451-1.545-3.451-3.451c0-1.906,1.545-3.451,3.451-3.451
+		C76.928,373.12,78.473,374.665,78.473,376.571"/>
+	<g id="a-2" data-name="a-2">
+		<path fill="none" stroke="#000000" stroke-width="2.7631" stroke-miterlimit="10" d="M176.318,368.531
+			c15.352,3.694,27.348,16.005,30.585,31.53"/>
+		<g>
+			<polygon points="177.329,375.674 166.667,367.392 179.169,362.298 			"/>
+		</g>
+	</g>
+</g>
+<style>
+#g-visualization-Artboard_1-interactions-img rect, #g-visualization-Artboard_1-interactions-img circle, #g-visualization-Artboard_1-interactions-img path, #g-visualization-Artboard_1-interactions-img line, #g-visualization-Artboard_1-interactions-img polyline, #g-visualization-Artboard_1-interactions-img polygon { vector-effect: non-scaling-stroke; }
+</style>
+</svg>
+
+		<div id="g-ai0-1" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:2.8588%;margin-top:-10.1px;left:3.7865%;width:61px;">
+			<p class="g-pstyle0">group</p>
+		</div>
+		<div id="g-ai0-2" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:7.4146%;margin-top:-8.5px;left:22.9317%;width:65px;">
+			<p class="g-pstyle1">group 2</p>
+		</div>
+		<div id="g-ai0-3" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:7.4146%;margin-top:-8.5px;left:38.55%;width:65px;">
+			<p class="g-pstyle1">group 3</p>
+		</div>
+		<div id="g-ai0-4" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:7.5434%;margin-top:-8.1px;left:7.3131%;width:65px;">
+			<p class="g-pstyle2">group 1</p>
+		</div>
+		<div id="g-ai0-5" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:15.3474%;margin-top:-8.5px;left:3.7865%;width:29px;">
+			<p class="g-pstyle1">7</p>
+		</div>
+		<div id="g-ai0-6" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:26.3312%;margin-top:-8.5px;left:3.7865%;width:29px;">
+			<p class="g-pstyle1">6</p>
+		</div>
+		<div id="g-ai0-7" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:37.3151%;margin-top:-8.5px;left:3.7865%;width:29px;">
+			<p class="g-pstyle1">5</p>
+		</div>
+		<div id="g-ai0-8" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:48.299%;margin-top:-8.5px;left:3.7865%;width:29px;">
+			<p class="g-pstyle1">4</p>
+		</div>
+		<div id="g-ai0-9" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:59.2828%;margin-top:-8.5px;left:3.7865%;width:29px;">
+			<p class="g-pstyle1">3</p>
+		</div>
+		<div id="g-ai0-10" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:70.2667%;margin-top:-8.5px;left:3.7865%;width:29px;">
+			<p class="g-pstyle1">2</p>
+		</div>
+		<div id="g-ai0-11" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:81.2505%;margin-top:-8.5px;left:3.7865%;width:29px;">
+			<p class="g-pstyle1">1</p>
+		</div>
+		<div id="a-1" class="g-interactions g-aiAbs g-aiPointText" style="top:83.542%;margin-top:-9.7px;left:33.4078%;width:158px;">
+			<p class="g-pstyle3"><span class="g-cstyle0">Group 1</span> is left behind</p>
+		</div>
+		<div id="g-ai0-13" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:92.2344%;margin-top:-8.5px;left:3.7865%;width:29px;">
+			<p class="g-pstyle1">0</p>
+		</div>
+		<div id="g-ai0-14" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:95.2855%;margin-top:-8.5px;left:6.6333%;width:40px;">
+			<p class="g-pstyle1">0.0</p>
+		</div>
+		<div id="g-ai0-15" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:95.2855%;margin-top:-8.5px;left:12.0313%;width:40px;">
+			<p class="g-pstyle1">0.2</p>
+		</div>
+		<div id="g-ai0-16" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:95.2855%;margin-top:-8.5px;left:19.0045%;width:40px;">
+			<p class="g-pstyle1">0.4</p>
+		</div>
+		<div id="g-ai0-17" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:95.2855%;margin-top:-8.5px;left:25.9777%;width:40px;">
+			<p class="g-pstyle1">0.6</p>
+		</div>
+		<div id="g-ai0-18" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:95.2855%;margin-top:-8.5px;left:32.9509%;width:40px;">
+			<p class="g-pstyle1">0.8</p>
+		</div>
+		<div id="g-ai0-19" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:95.2855%;margin-top:-8.5px;left:39.9242%;width:40px;">
+			<p class="g-pstyle1">1.0</p>
+		</div>
+		<div id="g-ai0-20" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:95.2855%;margin-top:-8.5px;left:46.8973%;width:40px;">
+			<p class="g-pstyle1">1.2</p>
+		</div>
+		<div id="g-ai0-21" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:95.2855%;margin-top:-8.5px;left:53.8706%;width:40px;">
+			<p class="g-pstyle1">1.4</p>
+		</div>
+		<div id="g-ai0-22" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:95.2855%;margin-top:-8.5px;left:60.8437%;width:40px;">
+			<p class="g-pstyle1">1.6</p>
+		</div>
+		<div id="g-ai0-23" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:95.2855%;margin-top:-8.5px;left:67.817%;width:40px;">
+			<p class="g-pstyle1">1.8</p>
+		</div>
+		<div id="g-ai0-24" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:95.2855%;margin-top:-8.5px;left:74.7903%;width:40px;">
+			<p class="g-pstyle1">2.0</p>
+		</div>
+		<div id="g-ai0-25" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:95.2855%;margin-top:-8.5px;left:81.7634%;width:40px;">
+			<p class="g-pstyle1">2.2</p>
+		</div>
+		<div id="g-ai0-26" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:95.2855%;margin-top:-8.5px;left:88.7367%;width:40px;">
+			<p class="g-pstyle1">2.4</p>
+		</div>
+		<div id="g-ai0-27" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:95.2855%;margin-top:-8.5px;left:94.1347%;width:40px;">
+			<p class="g-pstyle1">2.6</p>
+		</div>
+	</div>
+
+<!-- Custom HTML -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.3.0/d3.min.js"></script>
+<style>
+.hidden { visibility: hidden; }
+</style>
+
+</div>
+
+<!-- End ai2html - 2022-04-06 22:12 -->
+
+
+
+<!-- ai2html goes above this line -->
+
+          </div>
+        </div>
+
+        <div class="scrolly-overlay">
+          <div class="step" id="step-zero">
+            <p>Here is the distribution of cyclists in terms of the time spent training at Zone 5/High-intensity interval and their relative output, expressed as 20-minute FTP (Functional Threshold Power) </p>
+          </div>
+          <div class="step" id="step-one">
+            <p><span style="background: #1b9e77; color: #fff;">Group 1 cyclists</span> are not increasing their 20-minute FTP. They spent very little time training at high intensity.</p>
+          </div>
+          <div class="step" id="step-two">
+            <p><span style="background: #7570b3; color: #fff;">Group 3 cyclists</span> here are the Tour de France level cyclists who all have won back-to-back stages in a tour</p>
+          </div>
+          <div class="step" id="step-three">
+            <p>Now which category of cyclist can you relate to?</p>
+            <p>Of course, the <span style="background: #7570b3; color: #fff;">Tour de France</span> ones!</p>
+          </div>
+        </div>
+      </section>
+
+    <script>
+      
+      /* Scrollytelling code goes under here */
+      d3.selectAll("#a-1, #a-2, #a-3").classed('hidden', true)
+
+      d3.select("#step-one").on('stepin', function(e) {
+        /* console.log("got to step one")*/
+        d3.selectAll("#a-1, #a-2, #a-3").classed('hidden', false)
+      })
+
+      d3.select("#step-two").on('stepin', function(e) {
+        d3.selectAll("#a-1, #a-2, #a-3").classed('hidden', true)
+         /*console.log("got to step two")*/
+        d3.selectAll("[data-name='champs'] path").style('stroke', 'red')
+        d3.selectAll("[data-name='champs'] path").style('stroke-width', '2')
+      })
+
+      d3.select("#step-one").on('stepout', function(e) {
+        if(e.detail.direction == 'up') {
+          d3.selectAll("#a-1, #a-2, #a-3").classed('hidden', true)
+          d3.selectAll("[data-name='champs'] path").style('stroke', 'none')
+          d3.selectAll("[data-name='champs'] path").style('stroke-width', '0')
+        }
+      })
+
+      
+      d3.select("#step-two").on('stepout', function(e) {
+        if(e.detail.direction == 'up') {
+          d3.selectAll("#a-1, #a-2, #a-3").classed('hidden', true)
+          d3.selectAll("[data-name='champs'] path").style('stroke', 'none')
+          d3.selectAll("[data-name='champs'] path").style('stroke-width', '0')
+        }
+      })
+
+      d3.select("#step-three").on('stepin', function(e) {
+        d3.selectAll("#a-1, #a-2, #a-3").classed('hidden', true)
+         /*console.log("got to step two")*/
+        d3.selectAll("[data-name='champs'] path").style('stroke', 'none')
+        d3.selectAll("[data-name='champs'] path").style('stroke-width', '0')
+      })
+
+
+      d3.select("#step-zero").on('stepout', function(e) {
+        d3.selectAll("#a-1, #a-2, #a-3").classed('hidden', true)
+        d3.selectAll("[data-name='champs'] path").style('stroke', 'none')
+        d3.selectAll("[data-name='champs'] path").style('stroke-width', '0')
+      })
+
+
+
+
+    </script>
+
+<script>
+    const scroller = scrollama();
+
+	scroller
+		.setup({
+			step: "#scrolly .scrolly-overlay .step",
+			offset: 0.8,
+			debug: false
+		})
+		.onStepEnter(function({ element, index, direction}) {
+			const event = new CustomEvent('stepin', { detail: { direction: direction } })
+			element.dispatchEvent(event);
+		})
+		.onStepExit(function({ element, index, direction }) {
+			const event = new CustomEvent('stepout', { detail: { direction: direction } })
+			element.dispatchEvent(event);
+		});
+
+	window.addEventListener("resize", scroller.resize);
+    </script>
+
+
+    <!-- ai2html resizer script -->
+
+<script type="text/javascript">
+  (function() {
+      // only want one resizer on the page
+      if (document.documentElement.className.indexOf("g-resizer-v3-init") > -1) return;
+      document.documentElement.className += " g-resizer-v3-init";
+      // require IE9+
+      if (!("querySelector" in document)) return;
+      function resizer() {
+          var elements = Array.prototype.slice.call(document.querySelectorAll(".g-artboard[data-min-width]")),
+              widthById = {};
+          elements.forEach(function(el) {
+              var parent = el.parentNode,
+                  width = widthById[parent.id] || parent.getBoundingClientRect().width,
+                  minwidth = el.getAttribute("data-min-width"),
+                  maxwidth = el.getAttribute("data-max-width");
+              widthById[parent.id] = width;
+
+              if (+minwidth <= width && (+maxwidth >= width || maxwidth === null)) {
+                  el.style.display = "block";
+              } else {
+                  el.style.display = "none";
+              }
+          });
+          try {
+              if (window.parent && window.parent.$) {
+                  window.parent.$("body").trigger("resizedcontent", [window]);
+              }
+              if (window.require) {
+                  require(['foundation/main'], function() {
+                      require(['shared/interactive/instances/app-communicator'], function(AppCommunicator) {
+                          AppCommunicator.triggerResize();
+                      });
+                  });
+              }
+          } catch(e) { console.log(e); }
+      }
+
+      document.addEventListener('DOMContentLoaded', resizer);
+      // feel free to replace throttle with _.throttle, if available
+      window.addEventListener('resize', throttle(resizer, 200));        
+
+      function throttle(func, wait) {
+          // from underscore.js
+          var _now = Date.now || function() { return new Date().getTime(); },
+              context, args, result, timeout = null, previous = 0;
+          var later = function() {
+              previous = _now();
+              timeout = null;
+              result = func.apply(context, args);
+              if (!timeout) context = args = null;
+          };
+          return function() {
+              var now = _now(), remaining = wait - (now - previous);
+              context = this;
+              args = arguments;
+              if (remaining <= 0 || remaining > wait) {
+                  if (timeout) {
+                      clearTimeout(timeout);
+                      timeout = null;
+                  }
+                  previous = now;
+                  result = func.apply(context, args);
+                  if (!timeout) context = args = null;
+              } else if (!timeout && options.trailing !== false) {
+                  timeout = setTimeout(later, remaining);
+              }
+              return result;
+          };
+      }
+
+     
+  })();
+</script>
+
+<article class="introtostory">
+<h2>Why do we use it?</h2>
+<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. 
+	The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. 
+	Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. 
+	Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+</p>
+</article>
+
+<section id="scrolly">
+	<div class="sticky-thing">
+	  <div class="ai2html-container">
+
+		<!-- ai2html goes below this line -->
+<!-- Generated by ai2html v0.109.0 - 2022-04-06 22:12 -->
+<!-- ai file: visualization.ai -->
+<style media="screen,print">
+	#g-visualization-box ,
+	#g-visualization-box .g-artboard {
+		margin:0 auto;
+	}
+	#g-visualization-box p {
+		margin:0;
+	}
+	#g-visualization-box .g-aiAbs {
+		position:absolute;
+	}
+	#g-visualization-box .g-aiImg {
+		position:absolute;
+		top:0;
+		display:block;
+		width:100% !important;
+	}
+	#g-visualization-box .g-aiSymbol {
+		position: absolute;
+		box-sizing: border-box;
+	}
+	#g-visualization-box .g-aiPointText p { white-space: nowrap; }
+	#g-visualization-Artboard_1 {
+		position:relative;
+		overflow:hidden;
+	}
+	#g-visualization-Artboard_1 p {
+		font-family:arial,helvetica,sans-serif;
+		line-height:15px;
+		height:auto;
+		opacity:1;
+		letter-spacing:0em;
+		font-size:13px;
+		text-align:left;
+		color:rgb(0,0,0);
+		text-transform:none;
+		padding-bottom:0;
+		padding-top:0;
+		mix-blend-mode:normal;
+		font-style:normal;
+		position:static;
+	}
+	#g-visualization-Artboard_1 .g-pstyle0 {
+		font-weight:bold;
+		line-height:17px;
+		height:17px;
+		font-size:14px;
+	}
+	#g-visualization-Artboard_1 .g-pstyle1 {
+		height:15px;
+	}
+	#g-visualization-Artboard_1 .g-pstyle2 {
+		line-height:14px;
+		height:14px;
+		font-size:12px;
+	}
+	#g-visualization-Artboard_1 .g-pstyle3 {
+		font-weight:500;
+		line-height:18px;
+		height:18px;
+		font-size:15px;
+	}
+	#g-visualization-Artboard_1 .g-cstyle0 {
+		color:rgb(27,158,119);
+	}
+
+  #para-intro {
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    padding: 1.5rem;
+    margin-left: 10rem;
+    margin-right: 10rem;
+    justify-content: center;
+  }
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap" rel="stylesheet">
+
+</style>
+
+<h3 align="center">Why do we do the things we do?</h3>
+<div id="g-visualization-box" class="ai2html">
+
+	<!-- Artboard: Artboard_1 -->
+	<div id="g-visualization-Artboard_1" class="g-artboard" style="max-width: 556px;max-height: 492px" data-aspect-ratio="1.131" data-min-width="0">
+<div style="padding: 0 0 88.4228% 0;"></div>
+		<img id="g-visualization-Artboard_1-img" class="g-visualization-Artboard_1-img g-aiImg" alt="" src="visualization-Artboard_1.png"/>
+<!-- Generator: Adobe Illustrator 26.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg class="g-visualization-Artboard_1-interactions-img g-aiImg" version="1.2" baseProfile="tiny" id="g-visualization-Artboard_1-interactions-img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	 x="0px" y="0px" viewBox="0 0 556.038 491.631" overflow="visible" xml:space="preserve">
+<g>
+	<g id="champs" data-name="champs">
+		<path fill="#7570B3" d="M446.798,133.56c0,1.906-1.545,3.451-3.451,3.451c-1.906,0-3.451-1.545-3.451-3.451
+			c0-1.906,1.545-3.451,3.451-3.451C445.253,130.109,446.798,131.654,446.798,133.56"/>
+		<path fill="#7570B3" d="M466.183,138.96c0,1.906-1.545,3.451-3.451,3.451s-3.451-1.545-3.451-3.451
+			c0-1.906,1.545-3.451,3.451-3.451S466.183,137.054,466.183,138.96"/>
+		<path fill="#7570B3" d="M446.798,95.758c0,1.906-1.545,3.451-3.451,3.451c-1.906,0-3.451-1.545-3.451-3.451
+			s1.545-3.451,3.451-3.451C445.253,92.307,446.798,93.852,446.798,95.758"/>
+		<path fill="#7570B3" d="M524.34,122.759c0,1.906-1.545,3.451-3.451,3.451s-3.451-1.545-3.451-3.451s1.545-3.451,3.451-3.451
+			S524.34,120.853,524.34,122.759"/>
+		<path fill="#7570B3" d="M504.954,176.762c0,1.906-1.545,3.451-3.451,3.451s-3.451-1.545-3.451-3.451
+			c0-1.906,1.545-3.451,3.451-3.451S504.954,174.856,504.954,176.762"/>
+		<path fill="#7570B3" d="M466.183,90.358c0,1.906-1.545,3.451-3.451,3.451s-3.451-1.545-3.451-3.451s1.545-3.451,3.451-3.451
+			S466.183,88.452,466.183,90.358"/>
+		<path fill="#7570B3" d="M485.569,79.557c0,1.906-1.545,3.451-3.451,3.451s-3.451-1.545-3.451-3.451s1.545-3.451,3.451-3.451
+			S485.569,77.651,485.569,79.557"/>
+		<path fill="#7570B3" d="M485.569,144.36c0,1.906-1.545,3.451-3.451,3.451s-3.451-1.545-3.451-3.451s1.545-3.451,3.451-3.451
+			S485.569,142.454,485.569,144.36"/>
+		<path fill="#7570B3" d="M427.412,90.358c0,1.906-1.545,3.451-3.451,3.451c-1.906,0-3.451-1.545-3.451-3.451
+			s1.545-3.451,3.451-3.451C425.867,86.907,427.412,88.452,427.412,90.358"/>
+		<path fill="#7570B3" d="M446.798,144.36c0,1.906-1.545,3.451-3.451,3.451c-1.906,0-3.451-1.545-3.451-3.451
+			s1.545-3.451,3.451-3.451C445.253,140.909,446.798,142.454,446.798,144.36"/>
+		<path fill="#7570B3" d="M427.412,106.558c0,1.906-1.545,3.451-3.451,3.451c-1.906,0-3.451-1.545-3.451-3.451
+			s1.545-3.451,3.451-3.451C425.867,103.108,427.412,104.653,427.412,106.558"/>
+		<path fill="#7570B3" d="M466.183,149.761c0,1.906-1.545,3.451-3.451,3.451s-3.451-1.545-3.451-3.451s1.545-3.451,3.451-3.451
+			S466.183,147.855,466.183,149.761"/>
+		<path fill="#7570B3" d="M485.569,122.759c0,1.906-1.545,3.451-3.451,3.451s-3.451-1.545-3.451-3.451s1.545-3.451,3.451-3.451
+			S485.569,120.853,485.569,122.759"/>
+		<path fill="#7570B3" d="M504.954,149.761c0,1.906-1.545,3.451-3.451,3.451s-3.451-1.545-3.451-3.451s1.545-3.451,3.451-3.451
+			S504.954,147.855,504.954,149.761"/>
+		<path fill="#7570B3" d="M504.954,149.761c0,1.906-1.545,3.451-3.451,3.451s-3.451-1.545-3.451-3.451s1.545-3.451,3.451-3.451
+			S504.954,147.855,504.954,149.761"/>
+		<path fill="#7570B3" d="M485.569,133.56c0,1.906-1.545,3.451-3.451,3.451s-3.451-1.545-3.451-3.451
+			c0-1.906,1.545-3.451,3.451-3.451S485.569,131.654,485.569,133.56"/>
+		<path fill="#7570B3" d="M524.34,144.36c0,1.906-1.545,3.451-3.451,3.451s-3.451-1.545-3.451-3.451s1.545-3.451,3.451-3.451
+			S524.34,142.454,524.34,144.36"/>
+		<path fill="#7570B3" d="M427.412,171.362c0,1.906-1.545,3.451-3.451,3.451c-1.906,0-3.451-1.545-3.451-3.451
+			c0-1.906,1.545-3.451,3.451-3.451C425.867,167.911,427.412,169.456,427.412,171.362"/>
+		<path fill="#7570B3" d="M485.569,160.561c0,1.906-1.545,3.451-3.451,3.451s-3.451-1.545-3.451-3.451
+			c0-1.906,1.545-3.451,3.451-3.451S485.569,158.655,485.569,160.561"/>
+	</g>
+	
+		<rect id="a-3" data-name="a-3" x="37.515" y="344.44" fill="#DCFFF0" width="124.779" height="54.183"/>
+	<path style="opacity:0.69;" fill="none" stroke="#1B9E77" stroke-width="2.5201" stroke-miterlimit="10" d="
+		M59.087,392.772c0,1.906-1.545,3.451-3.451,3.451c-1.906,0-3.451-1.545-3.451-3.451c0-1.906,1.545-3.451,3.451-3.451
+		C57.542,389.321,59.087,390.866,59.087,392.772"/>
+	<path style="opacity:0.69;" fill="none" stroke="#1B9E77" stroke-width="2.5201" stroke-miterlimit="10" d="
+		M117.244,371.171c0,1.906-1.545,3.451-3.451,3.451c-1.906,0-3.451-1.545-3.451-3.451s1.545-3.451,3.451-3.451
+		C115.699,367.72,117.244,369.265,117.244,371.171"/>
+	<path style="opacity:0.69;" fill="none" stroke="#1B9E77" stroke-width="2.5201" stroke-miterlimit="10" d="
+		M59.087,371.171c0,1.906-1.545,3.451-3.451,3.451c-1.906,0-3.451-1.545-3.451-3.451s1.545-3.451,3.451-3.451
+		C57.542,367.72,59.087,369.265,59.087,371.171"/>
+	<path style="opacity:0.69;" fill="none" stroke="#1B9E77" stroke-width="2.5201" stroke-miterlimit="10" d="
+		M78.473,376.571c0,1.906-1.545,3.451-3.451,3.451c-1.906,0-3.451-1.545-3.451-3.451c0-1.906,1.545-3.451,3.451-3.451
+		C76.928,373.12,78.473,374.665,78.473,376.571"/>
+	<path style="opacity:0.69;" fill="none" stroke="#1B9E77" stroke-width="2.5201" stroke-miterlimit="10" d="
+		M78.473,371.171c0,1.906-1.545,3.451-3.451,3.451c-1.906,0-3.451-1.545-3.451-3.451s1.545-3.451,3.451-3.451
+		C76.928,367.72,78.473,369.265,78.473,371.171"/>
+	<path style="opacity:0.69;" fill="none" stroke="#1B9E77" stroke-width="2.5201" stroke-miterlimit="10" d="
+		M78.473,387.372c0,1.906-1.545,3.451-3.451,3.451c-1.906,0-3.451-1.545-3.451-3.451c0-1.906,1.545-3.451,3.451-3.451
+		C76.928,383.921,78.473,385.466,78.473,387.372"/>
+	<path style="opacity:0.69;" fill="none" stroke="#1B9E77" stroke-width="2.5201" stroke-miterlimit="10" d="
+		M78.473,381.971c0,1.906-1.545,3.451-3.451,3.451c-1.906,0-3.451-1.545-3.451-3.451c0-1.906,1.545-3.451,3.451-3.451
+		C76.928,378.521,78.473,380.066,78.473,381.971"/>
+	<path style="opacity:0.69;" fill="none" stroke="#1B9E77" stroke-width="2.5201" stroke-miterlimit="10" d="
+		M59.087,376.571c0,1.906-1.545,3.451-3.451,3.451c-1.906,0-3.451-1.545-3.451-3.451c0-1.906,1.545-3.451,3.451-3.451
+		C57.542,373.12,59.087,374.665,59.087,376.571"/>
+	<path style="opacity:0.69;" fill="none" stroke="#1B9E77" stroke-width="2.5201" stroke-miterlimit="10" d="
+		M78.473,381.971c0,1.906-1.545,3.451-3.451,3.451c-1.906,0-3.451-1.545-3.451-3.451c0-1.906,1.545-3.451,3.451-3.451
+		C76.928,378.521,78.473,380.066,78.473,381.971"/>
+	<path style="opacity:0.69;" fill="none" stroke="#1B9E77" stroke-width="2.5201" stroke-miterlimit="10" d="
+		M78.473,371.171c0,1.906-1.545,3.451-3.451,3.451c-1.906,0-3.451-1.545-3.451-3.451s1.545-3.451,3.451-3.451
+		C76.928,367.72,78.473,369.265,78.473,371.171"/>
+	<path style="opacity:0.69;" fill="none" stroke="#1B9E77" stroke-width="2.5201" stroke-miterlimit="10" d="
+		M97.858,381.971c0,1.906-1.545,3.451-3.451,3.451c-1.906,0-3.451-1.545-3.451-3.451c0-1.906,1.545-3.451,3.451-3.451
+		C96.313,378.521,97.858,380.066,97.858,381.971"/>
+	<path style="opacity:0.69;" fill="none" stroke="#1B9E77" stroke-width="2.5201" stroke-miterlimit="10" d="
+		M97.858,381.971c0,1.906-1.545,3.451-3.451,3.451c-1.906,0-3.451-1.545-3.451-3.451c0-1.906,1.545-3.451,3.451-3.451
+		C96.313,378.521,97.858,380.066,97.858,381.971"/>
+	<path style="opacity:0.69;" fill="none" stroke="#1B9E77" stroke-width="2.5201" stroke-miterlimit="10" d="
+		M78.473,381.971c0,1.906-1.545,3.451-3.451,3.451c-1.906,0-3.451-1.545-3.451-3.451c0-1.906,1.545-3.451,3.451-3.451
+		C76.928,378.521,78.473,380.066,78.473,381.971"/>
+	<path style="opacity:0.69;" fill="none" stroke="#1B9E77" stroke-width="2.5201" stroke-miterlimit="10" d="
+		M156.015,365.771c0,1.906-1.545,3.451-3.451,3.451c-1.906,0-3.451-1.545-3.451-3.451c0-1.906,1.545-3.451,3.451-3.451
+		C154.47,362.32,156.015,363.865,156.015,365.771"/>
+	<path style="opacity:0.69;" fill="none" stroke="#1B9E77" stroke-width="2.5201" stroke-miterlimit="10" d="
+		M117.244,349.57c0,1.906-1.545,3.451-3.451,3.451c-1.906,0-3.451-1.545-3.451-3.451s1.545-3.451,3.451-3.451
+		C115.699,346.119,117.244,347.664,117.244,349.57"/>
+	<path style="opacity:0.69;" fill="none" stroke="#1B9E77" stroke-width="2.5201" stroke-miterlimit="10" d="
+		M97.858,376.571c0,1.906-1.545,3.451-3.451,3.451c-1.906,0-3.451-1.545-3.451-3.451c0-1.906,1.545-3.451,3.451-3.451
+		C96.313,373.12,97.858,374.665,97.858,376.571"/>
+	<path style="opacity:0.69;" fill="none" stroke="#1B9E77" stroke-width="2.5201" stroke-miterlimit="10" d="
+		M78.473,365.771c0,1.906-1.545,3.451-3.451,3.451c-1.906,0-3.451-1.545-3.451-3.451c0-1.906,1.545-3.451,3.451-3.451
+		C76.928,362.32,78.473,363.865,78.473,365.771"/>
+	<path style="opacity:0.69;" fill="none" stroke="#1B9E77" stroke-width="2.5201" stroke-miterlimit="10" d="
+		M78.473,376.571c0,1.906-1.545,3.451-3.451,3.451c-1.906,0-3.451-1.545-3.451-3.451c0-1.906,1.545-3.451,3.451-3.451
+		C76.928,373.12,78.473,374.665,78.473,376.571"/>
+	<path style="opacity:0.69;" fill="none" stroke="#1B9E77" stroke-width="2.5201" stroke-miterlimit="10" d="
+		M78.473,371.171c0,1.906-1.545,3.451-3.451,3.451c-1.906,0-3.451-1.545-3.451-3.451s1.545-3.451,3.451-3.451
+		C76.928,367.72,78.473,369.265,78.473,371.171"/>
+	<path style="opacity:0.69;" fill="none" stroke="#1B9E77" stroke-width="2.5201" stroke-miterlimit="10" d="
+		M78.473,376.571c0,1.906-1.545,3.451-3.451,3.451c-1.906,0-3.451-1.545-3.451-3.451c0-1.906,1.545-3.451,3.451-3.451
+		C76.928,373.12,78.473,374.665,78.473,376.571"/>
+	<g id="a-2" data-name="a-2">
+		<path fill="none" stroke="#000000" stroke-width="2.7631" stroke-miterlimit="10" d="M176.318,368.531
+			c15.352,3.694,27.348,16.005,30.585,31.53"/>
+		<g>
+			<polygon points="177.329,375.674 166.667,367.392 179.169,362.298 			"/>
+		</g>
+	</g>
+</g>
+<style>
+#g-visualization-Artboard_1-interactions-img rect, #g-visualization-Artboard_1-interactions-img circle, #g-visualization-Artboard_1-interactions-img path, #g-visualization-Artboard_1-interactions-img line, #g-visualization-Artboard_1-interactions-img polyline, #g-visualization-Artboard_1-interactions-img polygon { vector-effect: non-scaling-stroke; }
+</style>
+</svg>
+
+		<div id="g-ai0-1" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:2.8588%;margin-top:-10.1px;left:3.7865%;width:61px;">
+			<p class="g-pstyle0">group</p>
+		</div>
+		<div id="g-ai0-2" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:7.4146%;margin-top:-8.5px;left:22.9317%;width:65px;">
+			<p class="g-pstyle1">group 2</p>
+		</div>
+		<div id="g-ai0-3" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:7.4146%;margin-top:-8.5px;left:38.55%;width:65px;">
+			<p class="g-pstyle1">group 3</p>
+		</div>
+		<div id="g-ai0-4" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:7.5434%;margin-top:-8.1px;left:7.3131%;width:65px;">
+			<p class="g-pstyle2">group 1</p>
+		</div>
+		<div id="g-ai0-5" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:15.3474%;margin-top:-8.5px;left:3.7865%;width:29px;">
+			<p class="g-pstyle1">7</p>
+		</div>
+		<div id="g-ai0-6" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:26.3312%;margin-top:-8.5px;left:3.7865%;width:29px;">
+			<p class="g-pstyle1">6</p>
+		</div>
+		<div id="g-ai0-7" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:37.3151%;margin-top:-8.5px;left:3.7865%;width:29px;">
+			<p class="g-pstyle1">5</p>
+		</div>
+		<div id="g-ai0-8" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:48.299%;margin-top:-8.5px;left:3.7865%;width:29px;">
+			<p class="g-pstyle1">4</p>
+		</div>
+		<div id="g-ai0-9" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:59.2828%;margin-top:-8.5px;left:3.7865%;width:29px;">
+			<p class="g-pstyle1">3</p>
+		</div>
+		<div id="g-ai0-10" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:70.2667%;margin-top:-8.5px;left:3.7865%;width:29px;">
+			<p class="g-pstyle1">2</p>
+		</div>
+		<div id="g-ai0-11" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:81.2505%;margin-top:-8.5px;left:3.7865%;width:29px;">
+			<p class="g-pstyle1">1</p>
+		</div>
+		<div id="a-1" class="g-interactions g-aiAbs g-aiPointText" style="top:83.542%;margin-top:-9.7px;left:33.4078%;width:158px;">
+			<p class="g-pstyle3"><span class="g-cstyle0">Group 1</span> is left behind</p>
+		</div>
+		<div id="g-ai0-13" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:92.2344%;margin-top:-8.5px;left:3.7865%;width:29px;">
+			<p class="g-pstyle1">0</p>
+		</div>
+		<div id="g-ai0-14" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:95.2855%;margin-top:-8.5px;left:6.6333%;width:40px;">
+			<p class="g-pstyle1">0.0</p>
+		</div>
+		<div id="g-ai0-15" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:95.2855%;margin-top:-8.5px;left:12.0313%;width:40px;">
+			<p class="g-pstyle1">0.2</p>
+		</div>
+		<div id="g-ai0-16" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:95.2855%;margin-top:-8.5px;left:19.0045%;width:40px;">
+			<p class="g-pstyle1">0.4</p>
+		</div>
+		<div id="g-ai0-17" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:95.2855%;margin-top:-8.5px;left:25.9777%;width:40px;">
+			<p class="g-pstyle1">0.6</p>
+		</div>
+		<div id="g-ai0-18" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:95.2855%;margin-top:-8.5px;left:32.9509%;width:40px;">
+			<p class="g-pstyle1">0.8</p>
+		</div>
+		<div id="g-ai0-19" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:95.2855%;margin-top:-8.5px;left:39.9242%;width:40px;">
+			<p class="g-pstyle1">1.0</p>
+		</div>
+		<div id="g-ai0-20" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:95.2855%;margin-top:-8.5px;left:46.8973%;width:40px;">
+			<p class="g-pstyle1">1.2</p>
+		</div>
+		<div id="g-ai0-21" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:95.2855%;margin-top:-8.5px;left:53.8706%;width:40px;">
+			<p class="g-pstyle1">1.4</p>
+		</div>
+		<div id="g-ai0-22" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:95.2855%;margin-top:-8.5px;left:60.8437%;width:40px;">
+			<p class="g-pstyle1">1.6</p>
+		</div>
+		<div id="g-ai0-23" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:95.2855%;margin-top:-8.5px;left:67.817%;width:40px;">
+			<p class="g-pstyle1">1.8</p>
+		</div>
+		<div id="g-ai0-24" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:95.2855%;margin-top:-8.5px;left:74.7903%;width:40px;">
+			<p class="g-pstyle1">2.0</p>
+		</div>
+		<div id="g-ai0-25" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:95.2855%;margin-top:-8.5px;left:81.7634%;width:40px;">
+			<p class="g-pstyle1">2.2</p>
+		</div>
+		<div id="g-ai0-26" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:95.2855%;margin-top:-8.5px;left:88.7367%;width:40px;">
+			<p class="g-pstyle1">2.4</p>
+		</div>
+		<div id="g-ai0-27" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:95.2855%;margin-top:-8.5px;left:94.1347%;width:40px;">
+			<p class="g-pstyle1">2.6</p>
+		</div>
+	</div>
+
+<!-- Custom HTML -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.3.0/d3.min.js"></script>
+<style>
+.hidden { visibility: hidden; }
+</style>
+
+</div>
+
+<!-- End ai2html - 2022-04-06 22:12 -->
+<!-- ai2html goes above this line -->
+
+          </div>
+        </div>
+
+
+        <div class="scrolly-overlay">
+			<div class="step" id="step-four">
+			  <p>Story 1</p>
+			</div>
+			<div class="step" id="step-five">
+			  <p>Story 2</p>
+			</div>
+			<div class="step" id="step-six">
+			  <p>Story 3</p>
+			</div>
+			<div class="step" id="step-seven">
+			  <p>Story 4</p>
+			</div>
+		  </div>
+		</section>
+
+  </body>
+</html>
